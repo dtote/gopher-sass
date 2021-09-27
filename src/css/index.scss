@@ -1,0 +1,201 @@
+$gopher-width: 360px;
+$gopher-color: #69d7e2;
+$gopher-mouth: #f6d2a2;
+$ear-size: 75px;
+$border-style: 3px solid black;
+
+.gopher-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .gopher-ears {
+    width: calc($gopher-width + 20px);
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(115px);
+
+    & .gopher-ear {
+      width: $ear-size;
+      height: $ear-size;
+      background: $gopher-color;
+      border-radius: 50%;
+      border: $border-style;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & .inner-ear {
+        width: calc($ear-size * 0.5);
+        height: calc($ear-size * 0.5);
+        background: black;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  & .gopher-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: $gopher-width;
+    height: 400px;
+    background: $gopher-color;
+    border-radius: 42% 42% 0 0;
+    border: $border-style;
+    margin: 0 auto;
+    z-index: 5;
+    border-bottom: none;
+
+    & .gopher-eyes {
+      width: calc($gopher-width * 0.9);
+      display: flex;
+      justify-content: space-evenly;
+      transform: translateY(42px);
+
+      & .gopher-eye {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: white;
+        border: $border-style;
+        display: flex;
+        align-items: center;
+
+        & .gopher-pupil {
+          width: 42px;
+          height: 42px;
+          background: black;
+          border-radius: 50%;
+          transform: translateX(10px);
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          & .gopher-shine {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: white;
+            transform: translate(-8px, -8px);
+          }
+        }
+      }
+    }
+
+    & .gopher-mouth {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 1.5rem;
+
+      & .gopher-nose {
+        width: 60px;
+        height: 60px;
+        border-radius: 80%;
+        background: black;
+        border: $border-style;
+      }
+
+      & .gopher-lips {
+        width: 120px;
+        height: 45px;
+        background: $gopher-mouth;
+        border: $border-style;
+        transform: translate(0, -15px);
+        border-radius: 40% 40% 40% 40%;
+        z-index: -1;
+      }
+
+      & .gopher-teeths {
+        display: flex;
+        z-index: -2;
+
+        & .gopher-teeth {
+          width: 30px;
+          height: 60px;
+          border-radius: 0 0 45% 45%;
+          background: white;
+          border: $border-style;
+          transform: translate(0, -35px);
+        }
+      }
+    }
+  }
+
+  & .gopher-hands {
+    width: calc($gopher-width + 100px);
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-115px);
+
+    & .gopher-left-hand,
+    & .gopher-right-hand {
+      width: 80px;
+      height: 40px;
+      background: $gopher-mouth;
+      border: $border-style;
+      border-radius: 45% 45% 45% 45%;
+    }
+      
+    & .gopher-right-hand {
+      transform: rotate(20deg);
+    }
+
+    & .gopher-left-hand {
+      transform: rotate(-20deg);
+    }
+  }
+
+  & .gopher-bottom {
+    width: $gopher-width;
+    height: 300px;
+    background: $gopher-color;
+    border-radius: 0 0 42% 42%;
+    border: $border-style;
+    transform: translateY(-115px);
+    border-top: none;
+
+    & .gopher-feets {
+      width: $gopher-width;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(260px);
+
+      & .gopher-right-feet,
+      & .gopher-left-feet {
+        width: 100px;
+        height: 40px;
+        background: $gopher-mouth;
+        border: $border-style;
+        border-radius: 45% 45% 45% 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      & .gopher-right-feet {
+        transform: rotate(20deg);
+      }
+
+      & .gopher-left-feet {
+        transform: rotate(-20deg);
+      }
+
+      & .gopher-right-feet .line {
+        transform: rotate(20deg) translate(35px, -15px);
+      }
+
+      & .gopher-left-feet .line {
+        transform: rotate(-20deg) translate(-35px, -15px);
+      }
+    }
+  }
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background: black;
+}
